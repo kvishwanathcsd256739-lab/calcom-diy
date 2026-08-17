@@ -25,18 +25,7 @@ const ServerPage = async () => {
     return redirect("/auth/login");
   }
 
-  // If user has any team membership (pending or accepted), redirect them directly to personal onboarding
-  // This handles the case where users sign up with an invite token (membership is auto-accepted)
-  const hasTeamMembership = await MembershipRepository.hasAnyTeamMembershipByUserId({
-    userId: session.user.id,
-  });
-  if (hasTeamMembership) {
-    return redirect("/onboarding/personal/settings");
-  }
-
-  const userEmail = session.user.email || "";
-
-  return <OnboardingView userEmail={userEmail} />;
+  return redirect("/onboarding/personal/settings");
 };
 
 export default ServerPage;

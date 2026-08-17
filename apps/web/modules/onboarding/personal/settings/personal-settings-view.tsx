@@ -119,14 +119,6 @@ export const PersonalSettingsView = ({
           subtitle={t("personal_details_subtitle")}
           footer={
             <div className="flex w-full items-center justify-end gap-4">
-              {!fromTeamOnboarding && (
-                <Button
-                  color="minimal"
-                  className="rounded-[10px]"
-                  onClick={() => router.push("/onboarding/getting-started")}>
-                  {t("back")}
-                </Button>
-              )}
               <Button
                 type="submit"
                 form="personal-settings-form"
