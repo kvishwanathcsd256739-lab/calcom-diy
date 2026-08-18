@@ -222,6 +222,8 @@ const nextConfig = (phase: string): NextConfig => {
   }
 
   return {
+    basePath: process.env.NEXT_PUBLIC_BASE_PATH || undefined,
+    assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || undefined,
     output: process.env.BUILD_STANDALONE === "true" ? "standalone" : undefined,
     serverExternalPackages: [
       "deasync",
